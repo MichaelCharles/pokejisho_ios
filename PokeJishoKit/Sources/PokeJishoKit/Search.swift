@@ -14,8 +14,8 @@ extension DictionaryStore {
 
         for entry in entries {
             if let filter, entry.type != filter { continue }
-            let cEnglish = entry.english.lowercased().replacingOccurrences(of: " ", with: "")
-            let cRomaji = entry.romaji.lowercased().replacingOccurrences(of: " ", with: "")
+            let cEnglish = entry.english.replacingOccurrences(of: "é", with: "e").lowercased().replacingOccurrences(of: " ", with: "")
+            let cRomaji = entry.romaji.replacingOccurrences(of: "é", with: "e").lowercased().replacingOccurrences(of: " ", with: "")
             let matches = cEnglish.contains(cTerm)
                 || entry.katakana.contains(katakanaTerm)
                 || cRomaji.contains(cTerm)

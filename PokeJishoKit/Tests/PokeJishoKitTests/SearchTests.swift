@@ -39,6 +39,14 @@ private func store() -> DictionaryStore {
     #expect(r.priority.contains { $0.english == "Flabebe" })
 }
 
+@Test func accentedEntryMatchesUnaccentedQuery() {
+    let s = DictionaryStore(entries: [
+        .init(type: .item, english: "Poké Flute", japanese: "ポケモンのふえ", katakana: "ポケモンノフエ", romaji: "pokemonnofue")
+    ])
+    #expect(s.search("Poke Flute", filter: nil).priority.contains { $0.english == "Poké Flute" })
+    #expect(s.search("Poké Flute", filter: nil).priority.contains { $0.english == "Poké Flute" })
+}
+
 @Test func filterRestrictsType() {
     let r = store().search("chu", filter: .move)
     #expect(r.priority.isEmpty && r.results.isEmpty)
