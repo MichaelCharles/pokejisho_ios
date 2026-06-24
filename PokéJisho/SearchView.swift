@@ -129,10 +129,9 @@ struct NoResultsView: View {
     @EnvironmentObject var loc: LocalizationManager
     var body: some View {
         ContentUnavailableView {
-            Label(loc.string("app.name"), systemImage: "magnifyingglass")
+            Label(loc.string("results.none.title"), systemImage: "magnifyingglass")
         } description: {
-            Link(loc.string("results.none"),
-                 destination: URL(string: "https://github.com/mcaubrey/pokejisho/issues")!)
+            Text(loc.string("results.none"))
         }
     }
 }

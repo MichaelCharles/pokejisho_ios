@@ -39,7 +39,7 @@ struct SettingsView: View {
                          destination: URL(string: "https://pokeapi.co")!)
                         .font(.footnote)
                     Link(loc.string("about.github"),
-                         destination: URL(string: "https://github.com/mca62511/pokejisho")!)
+                         destination: URL(string: "https://github.com/MichaelCharles/pokejisho")!)
                         .font(.footnote)
                 }
             }

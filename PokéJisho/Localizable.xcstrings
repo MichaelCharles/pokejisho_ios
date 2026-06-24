@@ -310,13 +310,29 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Can't find it? Submit an issue on GitHub."
+            "value" : "No matches found. Try a different spelling or language."
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "見つかりませんか？ GitHubでIssueを送ってください。"
+            "value" : "一致する項目が見つかりませんでした。別のつづりや言語でお試しください。"
+          }
+        }
+      }
+    },
+    "results.none.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No results"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "結果なし"
           }
         }
       }
