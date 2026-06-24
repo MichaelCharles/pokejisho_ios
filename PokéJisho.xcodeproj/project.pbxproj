@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		4CB000010000000000000003 /* PokeJishoKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4CB000010000000000000002 /* PokeJishoKit */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		4CA9A1E32FEBA4C600AB56DA /* PokéJisho.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PokéJisho.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -23,6 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CB000010000000000000003 /* PokeJishoKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +70,7 @@
 			);
 			name = "PokéJisho";
 			packageProductDependencies = (
+				4CB000010000000000000002 /* PokeJishoKit */,
 			);
 			productName = "PokéJisho";
 			productReference = 4CA9A1E32FEBA4C600AB56DA /* PokéJisho.app */;
@@ -94,6 +100,9 @@
 			);
 			mainGroup = 4CA9A1DA2FEBA4C600AB56DA;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				4CB000010000000000000001 /* XCLocalSwiftPackageReference "PokeJishoKit" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 4CA9A1E42FEBA4C600AB56DA /* Products */;
 			projectDirPath = "";
@@ -351,6 +360,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		4CB000010000000000000001 /* XCLocalSwiftPackageReference "PokeJishoKit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = PokeJishoKit;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4CB000010000000000000002 /* PokeJishoKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = PokeJishoKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4CA9A1DB2FEBA4C600AB56DA /* Project object */;
 }
