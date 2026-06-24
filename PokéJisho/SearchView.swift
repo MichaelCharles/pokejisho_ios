@@ -106,19 +106,33 @@ struct HelpView: View {
     var body: some View {
         List {
             Section {
-                VStack(spacing: 16) {
+                HStack(alignment: .center, spacing: 4) {
+                    VStack(alignment: .leading, spacing: 6) {
+                        Text(loc.string("help.welcome"))
+                            .font(.headline)
+                        Text(loc.string("help.body"))
+                            .font(.subheadline)
+                            .foregroundStyle(.secondary)
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(12)
+                    .background {
+                        RoundedRectangle(cornerRadius: 12, style: .continuous)
+                            .fill(Color(.secondarySystemBackground))
+                    }
+                    .overlay(alignment: .trailing) {
+                        BubbleTail()
+                            .fill(Color(.secondarySystemBackground))
+                            .frame(width: 12, height: 18)
+                            .offset(x: 11)
+                    }
+
                     Image("Mascot")
                         .resizable()
                         .scaledToFit()
-                        .frame(height: 180)
-                    Text(loc.string("help.welcome")).font(.headline)
-                    Text(loc.string("help.body"))
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
-                        .multilineTextAlignment(.center)
+                        .frame(width: 96)
                 }
-                .frame(maxWidth: .infinity)
-                .padding(.vertical)
+                .padding(.vertical, 8)
                 .listRowSeparator(.hidden)
                 .listRowBackground(Color.clear)
             }
@@ -155,6 +169,18 @@ struct HelpView: View {
             }
         }
         .listStyle(.plain)
+    }
+}
+
+/// A small triangle whose apex points right, used as the speech bubble's tail toward Sagumi.
+struct BubbleTail: Shape {
+    func path(in rect: CGRect) -> Path {
+        var path = Path()
+        path.move(to: CGPoint(x: rect.minX, y: rect.minY))
+        path.addLine(to: CGPoint(x: rect.maxX, y: rect.midY))
+        path.addLine(to: CGPoint(x: rect.minX, y: rect.maxY))
+        path.closeSubpath()
+        return path
     }
 }
 
