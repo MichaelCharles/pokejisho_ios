@@ -1,9 +1,9 @@
 import Testing
 @testable import PokeJishoKit
 
-@Test func loadsAll4340Entries() throws {
+@Test func loadsAll5967Entries() throws {
     let store = try DictionaryStore.loadBundled()
-    #expect(store.entries.count == 4340)
+    #expect(store.entries.count == 5967)
 }
 
 @Test func containsKnownPokemon() throws {
