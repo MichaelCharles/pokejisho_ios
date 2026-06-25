@@ -316,6 +316,42 @@
         }
       }
     },
+    "common.cancel" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Cancel" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "キャンセル" } }
+      }
+    },
+    "common.ok" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "OK" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "OK" } }
+      }
+    },
+    "scan.title" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Select Text" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "テキストを選択" } }
+      }
+    },
+    "scan.search" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Search" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "検索" } }
+      }
+    },
+    "scan.hint" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Drag to highlight text, then tap Search." } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "指でなぞって文字を選び、検索をタップしてください。" } }
+      }
+    },
+    "scan.empty" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "No text selected." } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "テキストが選択されていません。" } }
+      }
+    },
     "settings.version" : {
       "localizations" : {
         "en" : {
