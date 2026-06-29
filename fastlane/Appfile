@@ -1,0 +1,4 @@
+app_identifier("es.michaelcharl.Poke-Jisho")
+
+# apple_id / team_id are not needed here: authentication is handled by the
+# App Store Connect API key configured in the Fastfile (see fastlane/.env).

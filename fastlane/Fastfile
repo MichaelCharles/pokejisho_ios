@@ -1,0 +1,40 @@
+default_platform(:ios)
+
+# The app scheme name contains a non-ASCII "é" that xcodebuild only matches in
+# NFD form, so derive it from `xcodebuild -list` instead of hardcoding it.
+# (A filesystem path like the .xcodeproj below is fine as a literal — only the
+# xcodebuild -scheme string compare is normalization-sensitive. See CLAUDE.md.)
+APP_SCHEME = `xcodebuild -list 2>/dev/null | awk '/Schemes:/{f=1;next} f&&NF{print;exit}'`.strip
+
+platform :ios do
+  desc "Build and upload to App Store Connect. The build lands in TestFlight " \
+       "immediately and stays available to submit for an App Store release later."
+  lane :beta do
+    api_key = app_store_connect_api_key(
+      key_id: ENV.fetch("ASC_KEY_ID"),
+      issuer_id: ENV.fetch("ASC_ISSUER_ID"),
+      key_filepath: ENV.fetch("ASC_KEY_FILEPATH")
+    )
+
+    # Bump to one past the latest uploaded build to avoid duplicate-build-number
+    # rejections. If this errors on a fresh app with no builds yet, replace with
+    # `increment_build_number(xcodeproj: "PokéJisho.xcodeproj")` (plain +1).
+    increment_build_number(
+      xcodeproj: "PokéJisho.xcodeproj",
+      build_number: latest_testflight_build_number(api_key: api_key) + 1
+    )
+
+    build_app(
+      scheme: APP_SCHEME,
+      destination: "generic/platform=iOS",
+      export_method: "app-store",
+      output_directory: "build",
+      xcargs: "-allowProvisioningUpdates"
+    )
+
+    upload_to_testflight(
+      api_key: api_key,
+      skip_waiting_for_build_processing: true
+    )
+  end
+end

@@ -14,3 +14,11 @@ Package.resolved
 
 # Local design docs — not tracked
 docs/
+
+# Fastlane — secrets and build output (never commit the API key)
+fastlane/.env
+*.p8
+*.ipa
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/test_output/
